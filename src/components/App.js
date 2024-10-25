@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStore } from 'redux'
+// import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 
 
@@ -9,30 +9,8 @@ import Task03 from './../../03/Task03';
 import Task04 from './../../04/Task04';
 import Task05 from './../../05/Task05';
 
-const initState = {
-        message: 'Działa!',
-        time: new Date(),
-        users: [],
-}
+import store from '../store'
 
-const reducer = (state = initState, action) => {
-    switch(action.type) {
-        case 'getCurrentTime':
-            return {...state, time: new Date()}
-        case 'addUser':
-            const { data } = action.payload
-            return {...state, users:[...state.users, data]}
-        case 'removeUser':
-            const { id } = action.payload
-            const currentUsers = state.users.filter(u => u.id !== id)
-            return {...state, users: currentUsers}
-
-    }
-    return state
-}
-
-
-const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ / window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__)
 
 const App = () => {
     return (
@@ -41,7 +19,7 @@ const App = () => {
             <Task02 />
             <Task03 />
             <Task04 />
-            {/* <Task05 /> */}
+            <Task05 />
         </Provider>
     )
 }
