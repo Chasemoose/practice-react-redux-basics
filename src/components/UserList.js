@@ -33,6 +33,7 @@ class UserList extends React.Component {
 
     render() {
         const { users } = this.props
+        console.log(users);
         return (
             <>
                 <form onSubmit={this.handleSubmit}>

@@ -17,9 +17,11 @@ switch(action.type) {
         return {...state, users: currentUsers}
     case 'clearUsers':
         return {...state, users: []}
+    default:
+        return state
 
 }
-return state
+
 }
 
 export default reducer
